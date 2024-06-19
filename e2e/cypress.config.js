@@ -28,11 +28,11 @@ module.exports = defineConfig(
 
       },
       excludeSpecPattern: '*.js',
-      specPattern: 'cypress/integration/**/*.js',
+      specPattern: 'cypress/e2e/**/*.{feature,features}',
     },
     retries: {
       runMode: 2,
       openMode: 2
-    }
+    },
     
   });
