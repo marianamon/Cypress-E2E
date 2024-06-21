@@ -9,12 +9,15 @@ Given(/^that the user is in the "(Home|My Account|Bank Accounts|Notifications)" 
     baseActions.generateTokenAndAuthentication();
     baseActions.goToThePage(option);
 });
-Given(/^the user clicks on the "(Create|Delete|Save|Dismiss)" button$/, (option: string)=> {
+Given(/^the user clicks on the "(Create|Delete|Save|Dismiss|New)" button$/, (option: string)=> {
     baseActions.clickOnButton(option);
 });
 When(/^the user enters the data "(.*?)" "(.*?)" "(.*?)"$/, (accountName: string, routingNumber: string, accountNumber: string)=> {
     createBankAccountActions.createBankAccount(accountName, routingNumber, accountNumber);
 });
 Then(/^the bank account is visible in the user's account list$/, ()=> {
-    createBankAccountActions.verifyBankAccount();
+    createBankAccountActions.verifyBankAccountCreated();
+});
+Then(/^the bank account is deleted in the user's account list$/, ()=> {
+    createBankAccountActions.verifyBankAccountDeleted();
 });

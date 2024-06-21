@@ -9,10 +9,15 @@ export class CreateBankAccountsActions extends CreateBankAccountsPage {
         cy.get(this.routingNumberInput).type(routingNumber);
         cy.get(this.accountNumberInput).type(accountNumber);
     }
-
-    verifyBankAccount(){
+  
+    verifyBankAccountCreated(){
         cy.wait(3000);
         cy.get(this.bankAccountsList).should('be.visible');
+    }
+
+    verifyBankAccountDeleted(){
+        cy.wait(3000);
+        cy.get(this.bankAccountDeletedLabel).should('be.visible');
     }
 
 }

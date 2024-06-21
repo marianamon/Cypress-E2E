@@ -5,4 +5,6 @@ export class CreateBankAccountsPage{
     protected routingNumberInput = '[data-test="bankaccount-routingNumber-input"]';
     protected accountNumberInput =  '[data-test="bankaccount-accountNumber-input"]';
     protected bankAccountsList = '.MuiGrid-item .MuiTypography-gutterBottom';
+    protected bankAccountDeletedLabel = '[data-test="bankaccount-list-item-oks3Jqinq"]';
+    
 }
