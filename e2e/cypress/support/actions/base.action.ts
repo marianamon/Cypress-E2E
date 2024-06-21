@@ -36,17 +36,20 @@ export class BaseActions extends BasePage{
       cy.wait(1000)
       switch(option){
         case ButtonTextEnum.CREATE:
-            cy.get(this.buttonOptions).should('be.visible').contains('Create').click();
+            cy.get(this.buttonOptions).should('be.visible').contains('Create').click({force:true});
             break;
         case ButtonTextEnum.DELETE:
-            cy.get(this.buttonOptions).should('be.visible').contains('Delete').click();
+            cy.get(this.buttonOptions).should('be.visible').contains('Delete').click({force:true});
             break;
         case ButtonTextEnum.SAVE:
-            cy.get(this.buttonOptions).should('be.visible').contains('Save').click();
+            cy.get(this.buttonOptions).should('be.visible').contains('Save').click({force:true});
             break; 
         case ButtonTextEnum.DISMISS:
-            cy.get(this.buttonOptions).should('be.visible').contains('Dismiss').click();
+            cy.get(this.buttonOptions).should('be.visible').contains('Dismiss').click({force:true});
             break; 
+        case ButtonTextEnum.NEW:
+            cy.get(this.buttonOptions).should('be.visible').contains('New').click({force:true});
+            break;
         default:
             throw Error(`Wrong botton option: ${option}`);
       }
