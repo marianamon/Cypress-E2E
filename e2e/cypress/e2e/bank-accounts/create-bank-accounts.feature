@@ -14,6 +14,3 @@ Feature: Create Bank Accounts
         Given that the user is in the "Bank Accounts" page
         When the user clicks on the "Delete" button
         Then the bank account is deleted in the user's account list
-
-   
-
