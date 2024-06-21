@@ -1,6 +1,6 @@
 Feature: Create Bank Accounts
 
-    Scenario Outline: Received a new payment
+    Scenario Outline: Create a new Bank Accounts
         Given that the user is in the "Bank Accounts" page
         And the user clicks on the "New" button
         When the user enters the data <Bank Name> <Routing Number> <Account Number>
