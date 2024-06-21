@@ -15,6 +15,6 @@ Given(/^the user clicks on the "(Create|Delete|Save|Dismiss)" button$/, (option:
 When(/^the user enters the data "(.*?)" "(.*?)" "(.*?)"$/, (accountName: string, routingNumber: string, accountNumber: string)=> {
     createBankAccountActions.createBankAccount(accountName, routingNumber, accountNumber);
 });
-Then(/^the bank account is visible in the user's account list$/, (accountName: string)=> {
-    createBankAccountActions.verifyBankAccount(accountName);
+Then(/^the bank account is visible in the user's account list$/, ()=> {
+    createBankAccountActions.verifyBankAccount();
 });

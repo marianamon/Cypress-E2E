@@ -8,4 +8,4 @@ Feature: Create Bank Accounts
         Then the bank account is visible in the user's account list
         Examples:
           | Bank Name | Routing Number | Account Number |
-          |Bancamia   | 114398734      | 0078890987     |
+          | "Bancamia"| "114398734"    | "0078890987"   |
