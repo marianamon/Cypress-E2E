@@ -50,6 +50,12 @@ export class BaseActions extends BasePage{
         case ButtonTextEnum.NEW:
             cy.get(this.buttonOptions).should('be.visible').contains('New').click({force:true});
             break;
+        case ButtonTextEnum.PAY:
+            cy.get(this.buttonOptions).should('be.visible').contains('Pay').click({force:true});
+            break;
+        case ButtonTextEnum.REQUEST:
+            cy.get(this.buttonOptions).should('be.visible').contains('Request').click({force:true});
+            break;
         default:
             throw Error(`Wrong botton option: ${option}`);
       }

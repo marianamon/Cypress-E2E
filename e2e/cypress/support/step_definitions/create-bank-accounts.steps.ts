@@ -9,7 +9,7 @@ Given(/^that the user is in the "(Home|My Account|Bank Accounts|Notifications)" 
     baseActions.generateTokenAndAuthentication();
     baseActions.goToThePage(option);
 });
-Given(/^the user clicks on the "(Create|Delete|Save|Dismiss|New)" button$/, (option: string)=> {
+Given(/^the user clicks on the "(Create|Delete|Save|Dismiss|New|Pay|Request)" button$/, (option: string)=> {
     baseActions.clickOnButton(option);
 });
 When(/^the user enters the data "(.*?)" "(.*?)" "(.*?)"$/, (accountName: string, routingNumber: string, accountNumber: string)=> {

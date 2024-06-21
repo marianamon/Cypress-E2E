@@ -3,5 +3,7 @@ export enum ButtonTextEnum {
     DELETE = 'Delete',
     SAVE = 'Save',
     DISMISS = 'Dismiss',
-    NEW = 'New'
+    NEW = 'New',
+    PAY = 'Pay',
+    REQUEST = 'Request'
   }

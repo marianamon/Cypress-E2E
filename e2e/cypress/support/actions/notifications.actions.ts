@@ -4,6 +4,6 @@ export class NotificationsActions extends NotificationsPage {
     
     verifyNotificationstDeleted(){
         cy.wait(3000);
-        cy.get(this.notificationsDeletedlabel).should('not.be.visible');
+        cy.get(this.notificationsDeletedlabel).should('not.exist');
     }
 }

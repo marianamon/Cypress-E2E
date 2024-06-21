@@ -6,5 +6,6 @@ const notificationsActions = new NotificationsActions();
 const baseActions = new BaseActions();
 
 When(/^the notificacion is successfully deleted$/, ()=> {
+    notificationsActions.verifyNotificationstDeleted();
    
 });
