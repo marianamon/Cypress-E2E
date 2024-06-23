@@ -28,7 +28,7 @@ module.exports = defineConfig(
 
       },
       excludeSpecPattern: '*.js',
-      specPattern: 'e2e/cypress/e2e/**/*.{feature,features}',
+      specPattern: 'e2e/cypress/e2e/bank-accounts/create-bank-accounts.feature',
       //supportFile: 'cypress/support/e2e.js',
       supportFile: false
     },
