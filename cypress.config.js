@@ -15,6 +15,7 @@ module.exports = defineConfig(
     requestTimeout: 30000,
     responseTimeout: 30000,
     numTestsKeptInMemory: 0,
+    supportFile: false,
     
     e2e: {
       setupNodeEvents(on, config) {
