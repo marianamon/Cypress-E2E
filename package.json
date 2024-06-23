@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/marianamon/CypressE2E#readme",
   "dependencies": {
-    "cypress": "^13.11.0"
+    "cypress": "^13.12.0"
   },
   "devDependencies": {
     "cypress-cucumber-preprocessor": "^4.3.1",
