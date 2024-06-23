@@ -1,0 +1,18 @@
+name: E2E test
+
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: Cypress.io
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          project: ./site
+          browser: chrome
+          start:  npm run cypress:open 
+      
