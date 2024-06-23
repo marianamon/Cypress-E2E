@@ -15,7 +15,6 @@ module.exports = defineConfig(
     requestTimeout: 30000,
     responseTimeout: 30000,
     numTestsKeptInMemory: 0,
-    supportFile: false,
     
     e2e: {
       setupNodeEvents(on, config) {
@@ -30,6 +29,7 @@ module.exports = defineConfig(
       },
       excludeSpecPattern: '*.js',
       specPattern: 'cypress/e2e/**/*.{feature,features}',
+      supportFile: 'cypress/support/e2e.js',
     },
     retries: {
       runMode: 2,
