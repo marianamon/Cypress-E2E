@@ -21,7 +21,7 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           start:  npm run cypress:open
-          spec: 'cypress/e2e/**/*.{feature,features}'
+          spec: 'e2e/cypress/e2e/**/*.{feature,features}'
           config-file: cypress.config.js
           
           
