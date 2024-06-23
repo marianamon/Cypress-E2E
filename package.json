@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:qa": "npm run lint && yarn test:console --env NODE_ENV=qa",
-    "cypress:open": "cypress open",
-    "spec": "e2e/cypress/e2e/**/*.{feature,features}"
+    "cypress:open": "cypress open"
+    
   },
   "repository": {
     "type": "git",
