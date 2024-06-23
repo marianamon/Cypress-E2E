@@ -17,20 +17,11 @@ module.exports = defineConfig(
     numTestsKeptInMemory: 0,
     
     e2e: {
-      setupNodeEvents(on, config) {
-        return require('./e2e/cypress/plugins/index.js')(on, config);
-      },
-      env: {
-        allure: true,
-        allureResultsPath: 'cypress/report/allure-result/',
-        allureSkipAutomaticScreenshots: true,
-        allureReuseAfterSpec: true,
-
-      },
+      
       excludeSpecPattern: '*.js',
       specPattern: 'e2e/cypress/e2e/**/*.{feature,features}',
       //supportFile: 'cypress/support/e2e.js',
-      integrationFolder: "e2e/cypress/e2e/**/*.{feature,features}",
+      //integrationFolder: "e2e/cypress/e2e/**/*.{feature,features}",
       supportFile: false
     },
     retries: {
