@@ -20,10 +20,10 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
         with:
+          start:  npm run cypress:open
           spec: 'cypress/e2e/**/*.{feature,features}'
           config-file: cypress.config.js
-          working-directory: 'e2e'
-          start:  npm run cypress:open 
+          
           
        
  
