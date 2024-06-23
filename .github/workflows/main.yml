@@ -22,7 +22,7 @@ jobs:
         with:
           spec: 'cypress/e2e/**/*.{feature,features}'
           config-file: cypress.config.js
-          working-directory: 'e2e/'
+          working-directory: 'e2e'
           start:  npm run cypress:open 
           
        
