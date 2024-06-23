@@ -18,7 +18,7 @@ module.exports = defineConfig(
     
     e2e: {
       setupNodeEvents(on, config) {
-        return require('./plugins/index.js')(on, config);
+        return require('./e2e/cypress/plugins/index.js')(on, config);
       },
       env: {
         allure: true,
