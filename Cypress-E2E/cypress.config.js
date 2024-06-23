@@ -18,7 +18,7 @@ module.exports = defineConfig(
     
     e2e: {
       setupNodeEvents(on, config) {
-        return require('./e2e/cypress/plugins/index.js')(on, config);
+        //return require('./e2e/cypress/plugins/index.js')(on, config);
       },
       env: {
         allure: true,
@@ -28,7 +28,7 @@ module.exports = defineConfig(
 
       },
       excludeSpecPattern: '*.js',
-      specPattern: 'e2e/cypress/e2e/bank-accounts/create-bank-accounts.feature',
+      specPattern: 'e2e/cypress/e2e/**/*.{feature,features}',
       //supportFile: 'cypress/support/e2e.js',
       supportFile: false
     },
