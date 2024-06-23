@@ -25,5 +25,6 @@ jobs:
           project: ./site
           browser: chrome
           start:  npm run cypress:open 
+          
        
  
