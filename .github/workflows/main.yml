@@ -21,13 +21,13 @@ jobs:
         run: ls -R
 
       - name: List spec files
-        run: ls -R ./e2e/cypress/fixtures/
+        run: ls -R ./e2e/cypress/fixtures/create-bank-accounts.feature
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
         with:
           start:  npm run cypress:open
-          working-directory: ./e2e/cypress/fixtures/
+          working-directory: ./e2e/cypress/fixtures/create-bank-accounts.feature
     
 
           
