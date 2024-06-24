@@ -16,6 +16,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      
+      - name: List all files in repository for debugging
+        run: ls -R
 
       - name: List spec files
         run: ls -R ./cypress/e2e/*
