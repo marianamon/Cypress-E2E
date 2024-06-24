@@ -17,14 +17,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: List spec files
+        run: ls -R e2e/cypress/e2e/
+        
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
         with:
           start:  npm run cypress:open
           working-directory: ./e2e
       
-      - name: List spec files
-        run: ls -R e2e/cypress/e2e/
+    
 
           
           
