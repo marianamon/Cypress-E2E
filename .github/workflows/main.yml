@@ -21,7 +21,7 @@ jobs:
         run: ls -R
 
       - name: List spec files
-        run: ls -R ./e2e/cypress/fixtures/*
+        run: ls -R ./e2e/cypress/fixtures/
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
