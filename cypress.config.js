@@ -4,7 +4,6 @@ module.exports = defineConfig(
   {
     chromeWebSecurity: false,
     video: false,
-    videoUploadOnPasses: false,
     screenshotOnRunFailure: false,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
@@ -19,7 +18,7 @@ module.exports = defineConfig(
     e2e: {
       
       excludeSpecPattern: '*.js',
-      specPattern: 'e2e/cypress/e2e/**/*.{feature,features}',
+      specPattern: 'e2e/**/*.{feature,features}',
       //supportFile: 'cypress/support/e2e.js',
       //integrationFolder: "e2e/cypress/e2e/**/*.{feature,features}",
       supportFile: false
