@@ -18,10 +18,10 @@ module.exports = defineConfig(
     
     e2e: {
       
-      excludeSpecPattern: '*.js',
-      specPattern: 'e2e/cypress/e2e/**/*.{feature,features}',
+      //excludeSpecPattern: '*.js',
+      specPattern: 'e2e/cypress/integration/**/*.{js}',
       //supportFile: 'cypress/support/e2e.js',
-      //integrationFolder: "e2e/cypress/e2e/**/*.{feature,features}",
+      //integrationFolder: "e2e/cypress/e2sse/**/*.{feature,features}",
       supportFile: false
     },
     retries: {
