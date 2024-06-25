@@ -4,13 +4,14 @@
   "description": "1. Clone the repo using git clone --recursive https://github.com/marianamon/CypressE2E.git",
   "main": "cypress.config.js",
   "dependencies": {
-   
     "typescript": "^4.9.5"
-   
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
+    "@cypress/webpack-preprocessor": "^6.0.2",
     "cypress": "^13.12.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "gherkin-loader": "^0.0.1",
+    "ts-loader": "^9.5.1"
   },
   "scripts": {
     "cypress:open": "cypress open"
