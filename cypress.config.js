@@ -1,6 +1,7 @@
-import { defineConfig } from 'cypress';
-import * as webpack from '@cypress/webpack-preprocessor';
-import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
+
+const { defineConfig } = require("cypress");
+const {webpack} = '@cypress/webpack-preprocessor';
+const { addCucumberPreprocessorPlugin } = '@badeball/cypress-cucumber-preprocessor';
 
 async function setupNodeEvents(on, config) {
   await addCucumberPreprocessorPlugin(on, config);
@@ -38,7 +39,7 @@ async function setupNodeEvents(on, config) {
   return config;
 }
 
-export default defineConfig({
+({
   e2e: {
     specPattern: 'e2e/cypress/fixtures/*.{feature,features}',
     supportFile: false,
