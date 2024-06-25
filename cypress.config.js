@@ -6,7 +6,7 @@ module.exports = defineConfig({
 
     nonGlobalStepDefinitions: false,
 
-    //step_definitions: './cypress/e2e/login/',
+    step_definitions: './e2e/cypress/support/step_definitions/**/',
 
   },
 
@@ -24,4 +24,4 @@ module.exports = defineConfig({
 
   },
 
-})
+}) 
