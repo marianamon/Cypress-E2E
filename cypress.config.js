@@ -29,6 +29,10 @@ module.exports = defineConfig(
       },
       excludeSpecPattern: '*.js',
       specPattern: 'cypress/e2e/**/*.feature',
+      supportFile: false,
+      stepDefinitions: './e2e/cypress/support/step_definitions/*.ts'
+    
+
     },
     retries: {
       runMode: 2,
