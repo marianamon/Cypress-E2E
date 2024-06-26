@@ -1,0 +1,27 @@
+name: E2E test
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # O la versión que necesites
+      - name: Install dependencies
+        run: npm install
+        working-directory: .
+      
+      - name: List all files in repository for debugging
+        run: ls -R
+        working-directory: .
+      - name: List spec files
+        run: ls -R ./e2e/cypress/fixtures/create-bank-accounts.feature
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          start:  npm run cypress:open
+          working-directory: .
+    
