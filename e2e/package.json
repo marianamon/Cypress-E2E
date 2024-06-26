@@ -20,10 +20,8 @@
     "url": "https://github.com/marianamon/CypressE2E/issues"
   },
   "homepage": "https://github.com/marianamon/CypressE2E#readme",
-  "dependencies": {
-    "cypress": "^13.11.0"
-  },
   "devDependencies": {
+    "cypress": "^13.12.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5"
