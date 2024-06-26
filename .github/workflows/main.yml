@@ -12,11 +12,11 @@ jobs:
           node-version: '14' # O la versión que necesites
       - name: Install dependencies
         run: npm install
-        working-directory: .
+        working-directory: ./e2e
       
       - name: List all files in repository for debugging
         run: ls -R
-        working-directory: .
+        working-directory: ./e2e
 
       - name: List spec files
         run: ls -R ./e2e/cypress/e2e/**/*.feature
@@ -25,4 +25,4 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           start:  npm run cypress:open
-          working-directory: .
+          working-directory: ./e2e
