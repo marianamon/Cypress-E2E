@@ -26,6 +26,3 @@ jobs:
         with:
           start:  npm run cypress:open
           working-directory: .
-    
-
-s
