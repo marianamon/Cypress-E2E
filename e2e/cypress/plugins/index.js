@@ -36,13 +36,13 @@ module.exports = async (on, config) => {
 
   on('file:preprocessor', cucumber(options));
 
-  on('after:run', (results) => {
+  /*on('after:run', (results) => {
     if (results) {
       fs.mkdirSync("cypress/.run", { recursive: true });
       fs.writeFile("cypress/.run/results.json", JSON.stringify(results));
       new ZephyrScaleReporter(results).reportZephyrResults();
     }
-  });
+  });*/
 
 
   //const environment = config.env.NODE_ENV || "qa";

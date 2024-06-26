@@ -4,7 +4,6 @@ module.exports = defineConfig(
   {
     chromeWebSecurity: false,
     video: false,
-    videoUploadOnPasses: false,
     screenshotOnRunFailure: false,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
@@ -28,11 +27,12 @@ module.exports = defineConfig(
 
       },
       excludeSpecPattern: '*.js',
-      specPattern: 'cypress/e2e/**/*.{feature,features}',
+      specPattern: 'cypress/e2e/**/*.feature',
     },
     retries: {
       runMode: 2,
       openMode: 2
     },
+    
     
   });
