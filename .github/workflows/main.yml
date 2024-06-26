@@ -19,7 +19,7 @@ jobs:
         working-directory: .
 
       - name: List spec files
-        run: ls -R ./e2e/cypress/e2e/**/*.{feature,features}
+        run: ls -R ./e2e/cypress/e2e/**/*.feature
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
@@ -28,3 +28,4 @@ jobs:
           working-directory: .
     
 
+s
