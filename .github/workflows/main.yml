@@ -17,11 +17,14 @@ jobs:
       - name: List all files in repository for debugging
         run: ls -R
         working-directory: .
+
       - name: List spec files
-        run: ls -R ./e2e/cypress/fixtures/create-bank-accounts.feature
+        run: ls -R ./e2e/cypress/e2e/Notification/**/*.{feature,features}
+
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6.5.0
         with:
           start:  npm run cypress:open
           working-directory: .
     
+          

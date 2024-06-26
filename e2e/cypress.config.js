@@ -35,4 +35,5 @@ module.exports = defineConfig(
       openMode: 2
     },
     
+    
   });
