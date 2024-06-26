@@ -4,7 +4,6 @@ module.exports = defineConfig(
   {
     chromeWebSecurity: false,
     video: false,
-    videoUploadOnPasses: false,
     screenshotOnRunFailure: false,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
