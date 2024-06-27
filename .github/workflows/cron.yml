@@ -1,12 +1,12 @@
-name: E2E test parallel
-on: [pull_request]
+name: E2E test schedule
+on:
+    schedule:
+      # runs tests every day at 4am
+      - cron: '0 4 * * *'
+
 jobs:
-  cypress-run:
+  nightly:
     runs-on: ubuntu-latest
-    strategy:
-        fail-fast: false
-        matrix:
-          containers: [1, 2]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
