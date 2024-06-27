@@ -7,7 +7,7 @@ module.exports = defineConfig(
     screenshotOnRunFailure: false,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
-    projectId: 'ryx4xk',
+    projectId: 'u6c22n',
     viewportWidth: 1366,
     viewportHeight: 768,
     pageLoadTimeout: 30000,
