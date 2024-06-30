@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig(
   {
@@ -17,13 +18,15 @@ module.exports = defineConfig(
     
     e2e: {
       setupNodeEvents(on, config) {
-        return require('./cypress/plugins/index.js')(on, config);
+        require('./cypress/plugins/index.js')(on, config);
+        allureWriter(on, config);
+            return config;
       },
       env: {
         allure: true,
-        allureResultsPath: 'cypress/report/allure-result/',
+        allureReuseAfterSpec: true, 
+        //allureResultsPath: 'cypress/report/allure-result/',
         allureSkipAutomaticScreenshots: true,
-        allureReuseAfterSpec: true,
 
       },
       excludeSpecPattern: '*.js',

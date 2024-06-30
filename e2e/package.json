@@ -4,7 +4,10 @@
   "description": "test E2E",
   "main": "index.js",
   "scripts": {
-    "test:qa": "npm run lint && yarn test:console --env NODE_ENV=qa",
+    "ui-regression": "cypress run --browser chrome --spec cypress/e2e/**/*.feature",
+    "ui-regression-allure": "cypress run --browser chrome --spec cypress/e2e/**/*.feature --env allure=true",
+    "allure:clear":"rm -r allure-results/ allure-report cypress/screenshots || true ",
+    "allure:report":"npx allure generate allure-results --clean -o allure-report",
     "cypress:open": "cypress open"
   },
   "repository": {
@@ -24,6 +27,7 @@
     "cypress": "^13.11.0"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5"
