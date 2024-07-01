@@ -4,10 +4,10 @@ module.exports = defineConfig(
   {
     chromeWebSecurity: false,
     video: false,
-    screenshotOnRunFailure: false,
+    screenshotOnRunFailure: true,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
-    projectId: 'ryx4xk',
+    projectId: 'u6c22n',
     viewportWidth: 1366,
     viewportHeight: 768,
     pageLoadTimeout: 30000,
@@ -17,13 +17,14 @@ module.exports = defineConfig(
     
     e2e: {
       setupNodeEvents(on, config) {
-        return require('./cypress/plugins/index.js')(on, config);
+        require('./cypress/plugins/index.js')(on, config);
+            return config;
       },
       env: {
         allure: true,
+        allureReuseAfterSpec: true, 
         allureResultsPath: 'cypress/report/allure-result/',
         allureSkipAutomaticScreenshots: true,
-        allureReuseAfterSpec: true,
 
       },
       excludeSpecPattern: '*.js',

@@ -7,6 +7,7 @@ const baseActions = new BaseActions();
 
 Given(/^that the user is in the "(Home|My Account|Bank Accounts|Notifications)" page$/, (option: string)=> {
     baseActions.generateTokenAndAuthentication();
+    //baseActions.clickOnButton('Next');
     baseActions.goToThePage(option);
 });
 Given(/^the user clicks on the "(Create|Delete|Save|Dismiss|New|Pay|Request)" button$/, (option: string)=> {

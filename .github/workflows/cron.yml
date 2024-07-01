@@ -1,0 +1,25 @@
+name: E2E test schedule
+on:
+    schedule:
+      # runs tests every day at 4am
+      - cron: '0 4 * * *'
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # O la versión que necesites
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./e2e
+      
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          start:  npm run cypress:open
+          working-directory: ./e2e
