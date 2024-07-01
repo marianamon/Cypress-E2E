@@ -5,5 +5,6 @@ export enum ButtonTextEnum {
     DISMISS = 'Dismiss',
     NEW = 'New',
     PAY = 'Pay',
-    REQUEST = 'Request'
+    REQUEST = 'Request',
+    NEXT = 'Next'
   }

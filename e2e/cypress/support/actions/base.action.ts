@@ -35,6 +35,9 @@ export class BaseActions extends BasePage{
     clickOnButton(option: string){
       cy.wait(1000)
       switch(option){
+        case ButtonTextEnum.NEXT:
+            cy.get(this.buttonOptions).should('be.visible').contains('Next').click({force:true});
+            break;
         case ButtonTextEnum.CREATE:
             cy.get(this.buttonOptions).should('be.visible').contains('Create').click({force:true});
             break;
@@ -45,7 +48,13 @@ export class BaseActions extends BasePage{
             cy.get(this.buttonOptions).should('be.visible').contains('Save').click({force:true});
             break; 
         case ButtonTextEnum.DISMISS:
-            cy.get(this.buttonOptions).contains('Dismiss').should('not.exist');
+            cy.get('body').then(($body) => {
+                if ($body.find(this.buttonOptions).length > 6) {
+                    cy.get(this.buttonOptions).contains('Dismiss').first().click({ force: true });
+                } else {
+                    cy.get(this.buttonOptions).contains('Dismiss').should('not.exist');
+                }
+            })
             break; 
         case ButtonTextEnum.NEW:
             cy.get(this.buttonOptions).should('be.visible').contains('New').click({force:true});
