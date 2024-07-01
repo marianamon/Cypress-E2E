@@ -1,11 +1,10 @@
 const { defineConfig } = require("cypress");
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig(
   {
     chromeWebSecurity: false,
     video: false,
-    screenshotOnRunFailure: false,
+    screenshotOnRunFailure: true,
     experimentalInteractiveRunEvents: true,
     experimentalMemoryManagement: true,
     projectId: 'u6c22n',
@@ -19,13 +18,12 @@ module.exports = defineConfig(
     e2e: {
       setupNodeEvents(on, config) {
         require('./cypress/plugins/index.js')(on, config);
-        allureWriter(on, config);
             return config;
       },
       env: {
         allure: true,
         allureReuseAfterSpec: true, 
-        //allureResultsPath: 'cypress/report/allure-result/',
+        allureResultsPath: 'cypress/report/allure-result/',
         allureSkipAutomaticScreenshots: true,
 
       },
