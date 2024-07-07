@@ -12,4 +12,4 @@ cypress/cucumber-json/
 cypress/report
 cypress/.run
 cypress/config/cadreon.js
-.cypress.env.json
+e2e/cypress.env.json
