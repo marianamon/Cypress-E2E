@@ -1,8 +1,8 @@
 name: E2E test schedule
 on:
     schedule:
-      # runs tests every day at 4am
-      - cron: '0 4 * * *'
+      # runs tests every day at 7am
+      - cron: '0 7 * * *'
 
 jobs:
   nightly:
@@ -23,3 +23,12 @@ jobs:
         with:
           start:  npm run cypress:open
           working-directory: ./e2e
+        env:
+          CYPRESS_AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+          CYPRESS_AUTH_URL: ${{ secrets.AUTH_URL }}
+          CYPRESS_AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+          CYPRESS_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+          CYPRESS_AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+          CYPRESS_AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+          CYPRESS_AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+          CYPRESS_AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
