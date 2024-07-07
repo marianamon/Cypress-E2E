@@ -8,7 +8,7 @@ const loginApi = new LoginApi();
 export class BaseActions extends BasePage{
    generateTokenAndAuthentication(){
     loginApi.login();
-    loginApi.visitAuthenticated(Cypress.env('auth_base_url'))  
+    loginApi.visitAuthenticated(Cypress.env('AUTH_BASE_URL'))  
     }
     
     goToThePage(option: string){

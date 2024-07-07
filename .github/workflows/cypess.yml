@@ -26,13 +26,13 @@ jobs:
           record: true
           parallel: true 
         env:
-          AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
-          AUTH_URL: ${{ secrets.AUTH_URL }}
-          AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
-          AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
-          AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
-          AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
-          AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
-          AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
+          CYPRESS_AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+          CYPRESS_AUTH_URL: ${{ secrets.AUTH_URL }}
+          CYPRESS_AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+          CYPRESS_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+          CYPRESS_AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+          CYPRESS_AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+          CYPRESS_AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+          CYPRESS_AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
