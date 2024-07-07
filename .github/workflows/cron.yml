@@ -1,8 +1,8 @@
 name: E2E test schedule
 on:
     schedule:
-      # runs tests every day at 4am
-      - cron: '0 4 * * *'
+      # runs tests every day at 7am
+      - cron: '0 7 * * *'
 
 jobs:
   nightly:
