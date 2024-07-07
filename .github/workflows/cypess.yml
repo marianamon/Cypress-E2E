@@ -26,8 +26,13 @@ jobs:
           record: true
           parallel: true 
         env:
-          # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
-          # in GitHub repo → Settings → Secrets → Actions
+          AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+          AUTH_URL: ${{ secrets.AUTH_URL }}
+          AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+          AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+          AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+          AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+          AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+          AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
