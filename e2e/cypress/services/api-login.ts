@@ -6,19 +6,19 @@ export class LoginApi {
         message: [`🔐 Authenticating ...`],
       });
         const options = {
-        url: Cypress.env('auth_url'),
+        url: Cypress.env('AUTH_URL'),
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: {
-          audience: Cypress.env('auth_audience'),
+          audience: Cypress.env('AUTH_AUDIENCE'),
           grant_type: 'password',
-          client_id: Cypress.env('auth_client_id'),
-          client_secret: Cypress.env('auth_client_secret'),
+          client_id: Cypress.env('AUTH_CLIENT_ID'),
+          client_secret: Cypress.env('AUTH_CLIENT_SECRET'),
           scope: 'openid profile email',
-          username: Cypress.env('auth_username'),
-          password: Cypress.env('auth_password')
+          username: Cypress.env('AUTH_USERNAME'),
+          password: Cypress.env('AUTH_PASSWORD')
         },
         log: true,
       };
@@ -33,7 +33,7 @@ export class LoginApi {
             token_type: 'Bearer',
             audience: 'cypress',
             oauthTokenScope: 'openid profile email',
-            client_id: Cypress.env('auth_client_id')
+            client_id: Cypress.env('AUTH_CLIENT_ID')
           },
           expiresAt: Math.floor(Date.now() / 1000) + 86400
         };
@@ -83,8 +83,8 @@ export class LoginApi {
         }
       });
         cy.wait(3000);
-        cy.get('.auth0-lock-input').first().type(Cypress.env('auth_username'));
-        cy.get('.auth0-lock-input').last().type(Cypress.env('auth_password'));
+        cy.get('.auth0-lock-input').first().type(Cypress.env('AUTH_USERNAME'));
+        cy.get('.auth0-lock-input').last().type(Cypress.env('AUTH_PASSWORD'));
         cy.get('.auth0-lock-submit').click();
         cy.url().should("equal",url);
     };
