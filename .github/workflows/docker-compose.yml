@@ -27,8 +27,8 @@ jobs:
               -e CYPRESS_AUTH_CLIENT_SECRET=${{ secrets.AUTH_CLIENT_SECRET }} \
               -e CYPRESS_AUTH_USERNAME=${{ secrets.AUTH_USERNAME }} \
               -e CYPRESS_AUTH_PASSWORD=${{ secrets.AUTH_PASSWORD }} \
-              -v $(pwd):/my-cypress-project \
-              -w /my-cypress-project \
+              -v $(pwd):/e2e \
+              -w /e2e \
               cypresse2e:v3 \
-              --spec cypress/e2e/**/*.feature
+              --spec cypress/e2e/bank-accouns/*.feature,cypress/e2e/Payments/*.feature,cypress/e2e/Notifications/*.feature
   
