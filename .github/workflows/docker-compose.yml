@@ -16,3 +16,22 @@ jobs:
         
         - name: List all files in repository for debugging
           run: ls -R
+        
+        - name: Run Cypress tests
+          working-directory: ./e2e
+          run: |
+           docker run -it --rm   \
+              -e CYPRESS_AUTH_AUDIENCE=${{ secrets.AUTH_AUDIENCE }} \
+              -e CYPRESS_AUTH_URL=${{ secrets.AUTH_URL }} \
+              -e CYPRESS_AUTH_BASE_URL=${{ secrets.AUTH_BASE_URL }} \
+              -e CYPRESS_AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }} \
+              -e CYPRESS_AUTH_CLIENT_ID=${{ secrets.AUTH_CLIENT_ID }} \
+              -e CYPRESS_AUTH_CLIENT_SECRET=${{ secrets.AUTH_CLIENT_SECRET }} \
+              -e CYPRESS_AUTH_USERNAME=${{ secrets.AUTH_USERNAME }} \
+              -e CYPRESS_AUTH_PASSWORD=${{ secrets.AUTH_PASSWORD }} \
+              -v $(pwd):/e2e \
+              -w /e2e \
+              cypresse2e:v3 \
+              ls -R
+              --spec cypress/e2e/bank-accouns/*.feature,cypress/e2e/Payments/*.feature,cypress/e2e/Notifications/*.feature
+  
