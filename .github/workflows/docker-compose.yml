@@ -18,7 +18,7 @@ jobs:
           run: ls -R
         
         - name: Run Cypress tests
-          working-directory: ./CYPRESSE2E
+          working-directory: ./
           run: |
             docker run --rm \
               -e CYPRESS_AUTH_AUDIENCE=${{ secrets.AUTH_AUDIENCE }} \
