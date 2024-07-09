@@ -18,7 +18,7 @@ jobs:
         - name: Run Cypress tests
           working-directory: ./e2e
           run: |
-            docker run -it --rm \
+            docker run --rm \
               -e CYPRESS_AUTH_AUDIENCE=${{ secrets.AUTH_AUDIENCE }} \
               -e CYPRESS_AUTH_URL=${{ secrets.AUTH_URL }} \
               -e CYPRESS_AUTH_BASE_URL=${{ secrets.AUTH_BASE_URL }} \
