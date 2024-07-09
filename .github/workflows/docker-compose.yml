@@ -20,7 +20,7 @@ jobs:
         - name: Run Cypress tests
           working-directory: ./e2e
           run: |
-            cypress run --headless \
+            npx cypress run \
               -e CYPRESS_AUTH_AUDIENCE=${{ secrets.AUTH_AUDIENCE }} \
               -e CYPRESS_AUTH_URL=${{ secrets.AUTH_URL }} \
               -e CYPRESS_AUTH_BASE_URL=${{ secrets.AUTH_BASE_URL }} \
