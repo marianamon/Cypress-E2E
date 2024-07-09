@@ -18,7 +18,7 @@ jobs:
           run: ls -R
         
         - name: Run Cypress tests
-          working-directory: ./
+          working-directory: ./e2e
           run: |
             docker run --rm \
               -e CYPRESS_AUTH_AUDIENCE=${{ secrets.AUTH_AUDIENCE }} \
@@ -32,5 +32,6 @@ jobs:
               -v $(pwd):/e2e \
               -w /e2e \
               cypresse2e:v3 \
+              ls -R
               --spec cypress/e2e/bank-accouns/*.feature,cypress/e2e/Payments/*.feature,cypress/e2e/Notifications/*.feature
   
