@@ -8,7 +8,7 @@ WORKDIR /e2e
 # dependencies will be installed only if the package files change
 
 COPY ./package.json .
-COPY ./package-lock.json .
+#COPY ./package-lock.json .
 COPY ./cypress.config.js .
 COPY ./tsconfig.json .
 #use ./cypress.env.json whe do you need run test in docker desktop
