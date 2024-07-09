@@ -11,7 +11,8 @@ COPY ./package.json .
 COPY ./package-lock.json .
 COPY ./cypress.config.js .
 COPY ./tsconfig.json .
-COPY ./cypress.env.json .
+#use ./cypress.env.json whe do you need run test in docker desktop
+#COPY ./cypress.env.json .
 COPY ./cypress ./cypress
 # by setting CI environment variable we switch the Cypress install messages
 # to small "started / finished" and avoid 1000s of lines of progress messages
