@@ -3,21 +3,25 @@ on: [push]
 jobs:
   docker-browsers:
     runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, edge, electron, firefox]
-    # from https://hub.docker.com/r/cypress/browsers/tags
+    
     container:
       image: cypresse2e:v3
       options: --user 1001
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      # replace with the following for regular use:
-      # uses: cypress-io/github-action@v6
-      - name: Cypress tests
-        uses: ./
-        with:
+      
+        - name: Checkout
+          uses: actions/checkout@v4
+        
+        - name: Setup Docker Buildx
+          uses: docker/setup-buildx-action@v1
+        
+        - name: Build Docker image
+          run: docker build -t cypresse2e:v3 .
           working-directory: ./e2e
-          browser: ${{ matrix.browser }}
+       
+        - name: Cypress tests
+          uses: ./
+          with:
+            working-directory: ./e2e
+
+         
