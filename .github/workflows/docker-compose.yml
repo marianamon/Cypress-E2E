@@ -1,12 +1,8 @@
 name: E2E Docker test
 on: [push]
 jobs:
-  docker-browsers:
-    runs-on: ubuntu-22.04
-    
-    container:
-      image: cypresse2e:v3
-      options: --user 1001
+  cypress-run:
+    runs-on: ubuntu-latest
     steps:
       
         - name: Checkout
