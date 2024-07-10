@@ -1,4 +1,4 @@
-name: docker test
+name: E2E Docker test
 on: [push]
 jobs:
     cypress-run:
