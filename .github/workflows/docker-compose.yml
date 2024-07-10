@@ -18,7 +18,6 @@ jobs:
           run: ls -R
         
         - name: Run Cypress tests
-          working-directory: ./cypress.config.js
           run: |
             docker run -v $(pwd):/e2e -w /e2e -t -e "DEBUG=cypress:*" cypresse2e:v3 --spec cypress/e2e/*/*.feature
           env:
