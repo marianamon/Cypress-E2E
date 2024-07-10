@@ -12,13 +12,13 @@ jobs:
         
         - name: Build Docker image
           run: docker build -t cypresse2e:v3 .
-          working-directory: ./e2e
+          working-directory: /e2e
         
         - name: List all files in repository for debugging
           run: ls -R
         
         - name: Run Cypress tests
-          working-directory: ./e2e
+          working-directory: /e2e
           run: |
             docker run -v $(pwd):/e2e -w /e2e -t -e "DEBUG=cypress:*" cypresse2e:v3 --spec cypress/e2e/*/*.feature
           env:
