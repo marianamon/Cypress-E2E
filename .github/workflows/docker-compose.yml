@@ -18,7 +18,7 @@ jobs:
         
         - name: Build Docker image
           run: docker build -t cypresse2e:v3 .
-          working-directory: /e2e
+          working-directory: ./e2e
         
         - name: List all files in repository for debugging
           run: ls -R
