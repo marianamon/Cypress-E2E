@@ -13,6 +13,10 @@ jobs:
         - name: Build Docker image
           run: docker build -t cypresse2e:v3 .
           working-directory: ./e2e
+
+        - name: Validate installation
+          run: docker run -it cypresse2e:v3 npm list --depth=0
+
         
         - name: List all files in repository for debugging
           run: ls -R
