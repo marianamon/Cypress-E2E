@@ -22,7 +22,7 @@ RUN npm install
 # verify that Cypress has been installed correctly.
 # running this command separately from "cypress run" will also cache its result
 # to avoid verifying again when running the tests
-ENV CYPRESS_configFile=cypress.config.js
+
 
 # Depurar con comandos adicionales
 RUN echo "Contenido del directorio de trabajo:" && ls -l
