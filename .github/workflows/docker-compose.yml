@@ -15,8 +15,7 @@ jobs:
           working-directory: ./e2e
 
         - name: Validate installation
-          run: docker run -it cypresse2e:v3 npm list --depth=0
-
+          run: docker run cypresse2e:v3 npm list --depth=0
         
         - name: List all files in repository for debugging
           run: ls -R
