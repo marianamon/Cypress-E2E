@@ -10,6 +10,9 @@ jobs:
         - name: Setup Docker Buildx
           uses: docker/setup-buildx-action@v1
 
+        - name: List all files in repository for debugging
+          run: c
+
         - name: go to the working-direcyory
           run: cd CypressE2E/e2e 
         
