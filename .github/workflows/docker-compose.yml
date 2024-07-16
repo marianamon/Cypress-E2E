@@ -11,7 +11,7 @@ jobs:
           uses: docker/setup-buildx-action@v1
         
         - name: Build Docker image
-          run: docker build -t cypresse2e:v3 -f ./e2e
+          run: docker build -t cypresse2e:v3 -f ./e2e .
         
         - name: List all files in repository for debugging
           run: ls -R
