@@ -10,12 +10,6 @@ jobs:
         - name: Setup Docker Buildx
           uses: docker/setup-buildx-action@v1
 
-        - name: List all files in repository for debugging
-          run: ls -R
-
-        - name: go to the working-direcyory
-          run: cd e2e 
-        
         - name: Build Docker image
           run: docker build -t cypresse2e:v3 .
           working-directory: ./e2e
@@ -27,5 +21,6 @@ jobs:
           run: |
             docker run -v $(pwd):/e2e -w /e2e cypresse2e:v3 npx cypress verify
             docker run -v $(pwd):/e2e -w /e2e -t -e "DEBUG=cypress:*" cypresse2e:v3 --spec cypress/e2e/*/*.feature
+          working-directory: ./e2e
 
          
