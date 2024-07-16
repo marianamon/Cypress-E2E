@@ -14,7 +14,7 @@ jobs:
           run: ls -R
 
         - name: go to the working-direcyory
-          run: cd CypressE2E/e2e 
+          run: cd e2e 
         
         - name: Build Docker image
           run: docker build -t cypresse2e:v3 .
