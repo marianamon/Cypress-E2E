@@ -16,14 +16,29 @@ jobs:
 
         - name: Validate installation
           run: docker run cypresse2e:v3 /bin/sh -c "npm list --depth=0"
-        
-        - name: List all files in repository for debugging
-          run: ls -R
+          env:
+            CYPRESS_AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+            CYPRESS_AUTH_URL: ${{ secrets.AUTH_URL }}
+            CYPRESS_AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+            CYPRESS_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+            CYPRESS_AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+            CYPRESS_AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+            CYPRESS_AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+            CYPRESS_AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
         
         - name: Run Cypress tests
           run: |
             docker run -v $(pwd):/e2e -w /e2e cypresse2e:v3 npx cypress verify
             docker run -v $(pwd):/e2e -w /e2e -t -e "DEBUG=cypress:*" cypresse2e:v3 --spec cypress/e2e/*/*.feature
           working-directory: ./e2e
+          env:
+            CYPRESS_AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+            CYPRESS_AUTH_URL: ${{ secrets.AUTH_URL }}
+            CYPRESS_AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+            CYPRESS_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+            CYPRESS_AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+            CYPRESS_AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+            CYPRESS_AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+            CYPRESS_AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
 
          
