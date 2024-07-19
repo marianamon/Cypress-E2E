@@ -48,7 +48,7 @@ export class BaseActions extends BasePage{
             cy.get(this.buttonOptions).should('be.visible').contains('Save').click({force:true});
             break; 
         case ButtonTextEnum.DISMISS:
-            cy.get(this.labelOptions).should('be.visible').contains('Notifications')
+            cy.get(this.labelOptions).should('be.visible').contains('Notifications');
             break; 
         case ButtonTextEnum.NEW:
             cy.get(this.buttonOptions).should('be.visible').contains('New').click({force:true});
