@@ -50,9 +50,9 @@ export class BaseActions extends BasePage{
         case ButtonTextEnum.DISMISS:
             cy.get('body').then(($body) => {
                 if ($body.find(this.buttonOptions).length > 0) {
-                    cy.get(this.buttonOptions).contains('Dismiss').should('not.exist');
-                } else {
                     cy.get(this.buttonOptions).contains('Dismiss').first().click({ force: true });
+                } else {
+                    cy.log('El botón "Dismiss" no está presente');
                 }
             })
             break; 
