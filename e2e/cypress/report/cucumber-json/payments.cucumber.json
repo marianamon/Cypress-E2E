@@ -1,0 +1,152 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Payments management",
+    "line": 1,
+    "id": "payments-management",
+    "tags": [],
+    "uri": "payments.feature",
+    "elements": [
+      {
+        "id": "payments-management;received-a-new-payment",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Received a new Payment",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "that the user is in the \"Home\" page",
+            "result": {
+              "status": "passed",
+              "duration": 15431000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "the user clicks on the \"New\" button",
+            "result": {
+              "status": "passed",
+              "duration": 1121000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user select a contact",
+            "result": {
+              "status": "passed",
+              "duration": 3130000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user enters the data \"1000\" \"Promocion valida\"",
+            "result": {
+              "status": "passed",
+              "duration": 1595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the user clicks on the \"Pay\" button",
+            "result": {
+              "status": "passed",
+              "duration": 1118000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the payment is successfully executed",
+            "result": {
+              "status": "passed",
+              "duration": 3025000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "payments-management;request-a-new-payment",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Request a new Payment",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "that the user is in the \"Home\" page",
+            "result": {
+              "status": "passed",
+              "duration": 14428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the user clicks on the \"New\" button",
+            "result": {
+              "status": "passed",
+              "duration": 1112000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "the user select a contact",
+            "result": {
+              "status": "passed",
+              "duration": 3118000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the user enters the data \"1000\" \"Lo que te debia\"",
+            "result": {
+              "status": "passed",
+              "duration": 1581000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the user clicks on the \"Request\" button",
+            "result": {
+              "status": "passed",
+              "duration": 1104000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the payment is successfully executed",
+            "result": {
+              "status": "passed",
+              "duration": 3021000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

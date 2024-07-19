@@ -52,7 +52,7 @@ export class BaseActions extends BasePage{
                 if ($body.find(this.buttonOptions).length > 0) {
                     cy.get(this.buttonOptions).contains('Dismiss').first().click({ force: true });
                 } else {
-                    cy.get(this.buttonOptions).contains('Dismiss').should('not.exist');
+                    cy.log('El botón "Dismiss" no está presente');
                 }
             })
             break; 

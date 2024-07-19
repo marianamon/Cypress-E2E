@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Validate actions notifications",
+    "line": 1,
+    "id": "validate-actions-notifications",
+    "tags": [],
+    "uri": "actions-notifications.feature",
+    "elements": [
+      {
+        "id": "validate-actions-notifications;",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "that the user is in the \"Notifications\" page",
+            "result": {
+              "status": "passed",
+              "duration": 12870000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user clicks on the \"Dismiss\" button",
+            "result": {
+              "status": "passed",
+              "duration": 1029000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the notificacion is successfully deleted",
+            "result": {
+              "status": "passed",
+              "duration": 3011000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
