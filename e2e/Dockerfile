@@ -5,27 +5,24 @@ RUN mkdir -p /e2e
 
 WORKDIR /e2e
 
-# dependencies will be installed only if the package files change
-
+# Copy package files
 COPY ./package.json .
-#COPY ./package-lock.json .
+COPY ./package-lock.json .
+
+# Install dependencies
+RUN npm install
+
+# Copy remaining files
 COPY ./cypress.config.js .
 COPY ./tsconfig.json .
-#use ./cypress.env.json whe do you need run test in docker desktop
-#COPY ./cypress.env.json .
 COPY ./cypress ./cypress
-# by setting CI environment variable we switch the Cypress install messages
-# to small "started / finished" and avoid 1000s of lines of progress messages
-# https://github.com/cypress-io/cypress/issues/1243
-#ENV CI=1
-RUN npm install
-# verify that Cypress has been installed correctly.
-# running this command separately from "cypress run" will also cache its result
-# to avoid verifying again when running the tests
 
+# Set NODE_PATH environment variable
+ENV NODE_PATH=/usr/local/lib/node_modules
 
-# Depurar con comandos adicionales
+# Debugging commands
 RUN echo "Contenido del directorio de trabajo:" && ls -l
 RUN echo "Contenido del archivo de configuración:" && cat ./cypress.config.js
+
 ENTRYPOINT ["npx","cypress","run"]
-CMD [ "" ]
+CMD [""]
