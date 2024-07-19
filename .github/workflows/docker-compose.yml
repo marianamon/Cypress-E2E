@@ -1,0 +1,30 @@
+name: E2E Docker test
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t cypresse2e:v3 .
+      working-directory: ./e2e
+
+    - name: Set NODE_PATH environment variable
+      run: echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
+
+    - name: Run Cypress tests
+      env:
+        NODE_PATH: ${{ env.NODE_PATH }}
+        CYPRESS_AUTH_AUDIENCE: ${{ secrets.AUTH_AUDIENCE }}
+        CYPRESS_AUTH_URL: ${{ secrets.AUTH_URL }}
+        CYPRESS_AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+        CYPRESS_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
+        CYPRESS_AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+        CYPRESS_AUTH_CLIENT_SECRET: ${{ secrets.AUTH_CLIENT_SECRET }}
+        CYPRESS_AUTH_USERNAME: ${{ secrets.AUTH_USERNAME }}
+        CYPRESS_AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
+      run: docker run --env NODE_PATH --env CYPRESS_AUTH_AUDIENCE --env CYPRESS_AUTH_URL --env CYPRESS_AUTH_BASE_URL --env CYPRESS_AUTH_DOMAIN --env CYPRESS_AUTH_CLIENT_ID --env CYPRESS_AUTH_CLIENT_SECRET --env CYPRESS_AUTH_USERNAME --env CYPRESS_AUTH_PASSWORD cypresse2e:v3

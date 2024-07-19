@@ -33,12 +33,15 @@
   },
   "homepage": "https://github.com/marianamon/CypressE2E#readme",
   "devDependencies": {
+    "cypress": "^13.13.1",
     "@shelex/cypress-allure-plugin": "^2.39.1",
     "allure-commandline": "^2.21.0",
-    "cypress": "^13.12.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "multiple-cucumber-html-reporter": "^3.0.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "docker": "^1.0.0"
   }
 }
