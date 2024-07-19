@@ -11,6 +11,7 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t cypresse2e:v3 .
+      working-directory: ./e2e
 
     - name: Set NODE_PATH environment variable
       run: echo "NODE_PATH=$(npm root -g)" >> $GITHUB_ENV
